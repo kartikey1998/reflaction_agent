@@ -1,0 +1,26 @@
+[project]
+authors = [{name = "kartikey chhipa", email = "chhipa.kartikey@gmail.com"}]
+name = "reflaction_agent"
+requires-python = ">= 3.11"
+version = "0.1.0"
+dependencies = ["langchain-ollama>=0.3.3,<0.4"]
+
+[build-system]
+build-backend = "hatchling.build"
+requires = ["hatchling"]
+
+[tool.pixi.workspace]
+channels = ["conda-forge"]
+platforms = ["linux-64"]
+
+[tool.pixi.pypi-dependencies]
+reflaction_agent = { path = ".", editable = true }
+
+[tool.pixi.tasks]
+
+[tool.pixi.dependencies]
+ruff = ">=0.11.10,<0.12"
+langchain = ">=0.3.17,<0.4"
+ollama = ">=0.6.8,<0.7"
+python-dotenv = ">=1.1.0,<2"
+langgraph = ">=0.4.5,<0.5"
